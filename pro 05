@@ -1,0 +1,450 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Creative Studio - Landing Page</title>
+
+<style>
+
+/* GENERAL STYLING */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f8f9fc;
+    color: #222;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 8%;
+    background: white;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: #5145cd;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    margin-left: 25px;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: #5145cd;
+}
+
+/* HERO SECTION */
+.hero {
+    min-height: 550px;
+    background: linear-gradient(120deg, #29245e, #7568df);
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 60px 10%;
+    gap: 40px;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    color: #e4e1ff;
+}
+
+.hero-image {
+    flex: 1;
+}
+
+.hero-image img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.btn {
+    display: inline-block;
+    background: #ffb703;
+    color: #222;
+    padding: 14px 28px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #ffd166;
+    transform: translateY(-3px);
+}
+
+/* ABOUT SECTION */
+.about {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    padding: 80px 10%;
+    background: white;
+}
+
+.about-image {
+    flex: 1;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+.about-content {
+    flex: 1;
+}
+
+.about-content h2 {
+    font-size: 34px;
+    color: #5145cd;
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* SERVICES SECTION */
+.services {
+    padding: 80px 8%;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 34px;
+    margin-bottom: 15px;
+}
+
+.section-description {
+    color: #777;
+    margin-bottom: 40px;
+}
+
+.service-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.service-card {
+    background: white;
+    padding: 35px 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+}
+
+.service-card h3 {
+    color: #5145cd;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    color: #666;
+    line-height: 1.7;
+}
+
+/* CALL TO ACTION */
+.cta {
+    background: #5145cd;
+    color: white;
+    text-align: center;
+    padding: 70px 20px;
+}
+
+.cta h2 {
+    font-size: 34px;
+    margin-bottom: 18px;
+}
+
+.cta p {
+    margin-bottom: 25px;
+    line-height: 1.7;
+}
+
+.cta .btn {
+    background: white;
+    color: #5145cd;
+}
+
+/* CONTACT SECTION */
+.contact {
+    background: white;
+    text-align: center;
+    padding: 65px 20px;
+}
+
+.contact h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.contact p {
+    margin: 12px;
+    color: #666;
+}
+
+/* FOOTER */
+footer {
+    background: #222044;
+    color: white;
+    padding: 25px;
+    text-align: center;
+}
+
+footer p {
+    color: #ccc;
+    margin-top: 10px;
+}
+
+/* RESPONSIVE DESIGN */
+@media(max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    nav a {
+        margin: 0;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 60px 7%;
+    }
+
+    .hero-content h1 {
+        font-size: 35px;
+    }
+
+    .about {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .service-container {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title,
+    .cta h2 {
+        font-size: 28px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+
+    <div class="logo">CreativeStudio</div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <h1>Build Your Digital Future With Us</h1>
+
+        <p>
+            We create beautiful websites and innovative
+            digital experiences that help businesses
+            grow and succeed in the modern world.
+        </p>
+
+        <a href="#services" class="btn">Explore Services</a>
+
+    </div>
+
+    <div class="hero-image">
+
+        <img
+        src="https://images.unsplash.com/photo-1498050108023-c5249f4df085"
+        alt="Web development workspace">
+
+    </div>
+
+</section>
+
+<!-- ABOUT SECTION -->
+<section class="about" id="about">
+
+    <div class="about-image">
+
+        <img
+        src="https://images.unsplash.com/photo-1521737711867-e3b97375f902"
+        alt="Creative team working">
+
+    </div>
+
+    <div class="about-content">
+
+        <h2>About Our Company</h2>
+
+        <p>
+            CreativeStudio is a digital agency focused
+            on designing modern websites and providing
+            creative solutions for businesses.
+        </p>
+
+        <p>
+            Our team combines creativity, technology
+            and innovation to deliver attractive,
+            user-friendly and responsive websites.
+        </p>
+
+        <a href="#contact" class="btn">Learn More</a>
+
+    </div>
+
+</section>
+
+<!-- SERVICES SECTION -->
+<section class="services" id="services">
+
+    <h2 class="section-title">Our Services</h2>
+
+    <p class="section-description">
+        We provide creative solutions for your business.
+    </p>
+
+    <div class="service-container">
+
+        <div class="service-card">
+
+            <h3>Web Development</h3>
+
+            <p>
+                We build responsive and modern websites
+                using the latest web technologies.
+            </p>
+
+        </div>
+
+        <div class="service-card">
+
+            <h3>Web Designing</h3>
+
+            <p>
+                We create attractive and user-friendly
+                website designs for businesses.
+            </p>
+
+        </div>
+
+        <div class="service-card">
+
+            <h3>Digital Marketing</h3>
+
+            <p>
+                We help businesses grow their online
+                presence through digital strategies.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CALL TO ACTION -->
+<section class="cta">
+
+    <h2>Ready To Start Your Project?</h2>
+
+    <p>
+        Let's work together and create something amazing.
+    </p>
+
+    <a href="mailto:contact@example.com" class="btn">
+        Get In Touch
+    </a>
+
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="contact" id="contact">
+
+    <h2>Contact Us</h2>
+
+    <p>Email: contact@example.com</p>
+
+    <p>Phone: +91 9876543210</p>
+
+    <p>Location: India</p>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+
+    <h3>CreativeStudio</h3>
+
+    <p>
+        © 2026 CreativeStudio. All Rights Reserved.
+    </p>
+
+</footer>
+
+</body>
+</html>
