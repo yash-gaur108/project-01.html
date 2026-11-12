@@ -1,0 +1,471 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Landing Page</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f8f9fa;
+            color: #333;
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+            color: #0077b6;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            margin-left: 25px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #0077b6;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            min-height: 550px;
+            background:
+                linear-gradient(rgba(0,0,0,0.45),
+                rgba(0,0,0,0.45)),
+                url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e")
+                center/cover no-repeat;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 40px 20px;
+        }
+
+        .hero-content {
+            max-width: 750px;
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 19px;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #0077b6;
+            color: white;
+            padding: 14px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #023e8a;
+        }
+
+        /* ABOUT SECTION */
+        .about {
+            padding: 70px 10%;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            background: white;
+        }
+
+        .about img {
+            width: 45%;
+            border-radius: 10px;
+        }
+
+        .about-content {
+            flex: 1;
+        }
+
+        .about h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #0077b6;
+        }
+
+        .about p {
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        /* DESTINATIONS */
+        .destinations {
+            padding: 70px 8%;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 32px;
+            margin-bottom: 40px;
+        }
+
+        .destination-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .destination-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .destination-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .destination-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .destination-card h3 {
+            margin: 18px;
+            font-size: 22px;
+        }
+
+        .destination-card p {
+            padding: 0 18px 20px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* SERVICES */
+        .services {
+            padding: 70px 8%;
+            background: white;
+            text-align: center;
+        }
+
+        .service-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .service-box {
+            background: #f1f8fc;
+            padding: 35px 20px;
+            border-radius: 10px;
+        }
+
+        .service-box h3 {
+            color: #0077b6;
+            margin-bottom: 15px;
+        }
+
+        .service-box p {
+            line-height: 1.6;
+            color: #555;
+        }
+
+        /* CALL TO ACTION */
+        .cta {
+            background: #0077b6;
+            color: white;
+            text-align: center;
+            padding: 65px 20px;
+        }
+
+        .cta h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            margin-bottom: 25px;
+        }
+
+        .cta .btn {
+            background: white;
+            color: #0077b6;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #17212b;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        footer p {
+            margin: 8px;
+            color: #ccc;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media(max-width: 768px) {
+
+            header {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0;
+            }
+
+            .hero h1 {
+                font-size: 35px;
+            }
+
+            .about {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .about img {
+                width: 100%;
+            }
+
+            .destination-container,
+            .service-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media(min-width: 769px) and (max-width: 1000px) {
+            .destination-container,
+            .service-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo">TravelWorld</div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#destinations">Destinations</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h1>Explore The World With Us</h1>
+
+            <p>
+                Discover beautiful destinations, experience
+                amazing adventures and create unforgettable
+                memories with TravelWorld.
+            </p>
+
+            <a href="#destinations" class="btn">
+                Explore Now
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about" id="about">
+
+        <img
+            src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1"
+            alt="Beautiful travel destination"
+        >
+
+        <div class="about-content">
+
+            <h2>About TravelWorld</h2>
+
+            <p>
+                TravelWorld is a travel platform designed
+                to help people explore beautiful places
+                around the world.
+            </p>
+
+            <p>
+                We provide exciting travel experiences,
+                affordable holiday packages and comfortable
+                travel services to make every journey special.
+            </p>
+
+            <a href="#services" class="btn">Learn More</a>
+
+        </div>
+
+    </section>
+
+    <!-- DESTINATIONS SECTION -->
+    <section class="destinations" id="destinations">
+
+        <h2 class="section-title">Popular Destinations</h2>
+
+        <div class="destination-container">
+
+            <div class="destination-card">
+
+                <img src="https://images.unsplash.com/photo-1519501025264-65ba15a82390"
+                     alt="New York">
+
+                <h3>New York</h3>
+
+                <p>
+                    Explore the beautiful city life,
+                    famous buildings and amazing attractions.
+                </p>
+
+            </div>
+
+            <div class="destination-card">
+
+                <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee"
+                     alt="Mountain">
+
+                <h3>Switzerland</h3>
+
+                <p>
+                    Experience stunning mountains,
+                    peaceful lakes and natural beauty.
+                </p>
+
+            </div>
+
+            <div class="destination-card">
+
+                <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c"
+                     alt="Dubai">
+
+                <h3>Dubai</h3>
+
+                <p>
+                    Discover luxury shopping, modern
+                    architecture and desert adventures.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="services" id="services">
+
+        <h2 class="section-title">Our Services</h2>
+
+        <div class="service-container">
+
+            <div class="service-box">
+                <h3>Flight Booking</h3>
+                <p>
+                    Easy and convenient flight booking
+                    services for your journey.
+                </p>
+            </div>
+
+            <div class="service-box">
+                <h3>Hotel Booking</h3>
+                <p>
+                    Find comfortable hotels and
+                    accommodation at affordable prices.
+                </p>
+            </div>
+
+            <div class="service-box">
+                <h3>Tour Packages</h3>
+                <p>
+                    Enjoy exciting travel packages
+                    and unforgettable experiences.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section class="cta">
+
+        <h2>Ready For Your Next Adventure?</h2>
+
+        <p>
+            Start planning your dream vacation today!
+        </p>
+
+        <a href="mailto:travelworld@example.com" class="btn">
+            Contact Us
+        </a>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact">
+
+        <h3>TravelWorld</h3>
+
+        <p>Email: travelworld@example.com</p>
+
+        <p>Phone: +91 9876543210</p>
+
+        <p>© 2026 TravelWorld. All Rights Reserved.</p>
+
+    </footer>
+
+</body>
+</html>
